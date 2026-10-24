@@ -1,12 +1,12 @@
 import { useSearchParams } from "react-router"
 
-const SEARCH_PARAM_NAME = "search"
+const SEARCH_PARAM_NAME = "article"
 
-export default function useSearch() {
+export function useArticleSearch() {
   const [searchParams, setSearchParams] = useSearchParams()
-  const search = searchParams.get(SEARCH_PARAM_NAME)
+  const article = searchParams.get(SEARCH_PARAM_NAME)
 
-  const setSearch = (value) => {
+  const setArticle = (value) => {
     setSearchParams((prev) => {
       const newParams = { ...prev }
       if (value) {
@@ -17,8 +17,8 @@ export default function useSearch() {
   }
 
   return {
-    search,
-    setSearch,
-    showBrandList: !!search,
+    article,
+    setArticle,
+    showBrandList: !!article,
   }
 }

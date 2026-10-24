@@ -4,15 +4,28 @@ import { apiRoot, requestKey } from "../config/global-variables"
 export const goodsApi = createApi({
   reducerPath: "goodsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: apiRoot.concat(`/hs/hsprice/?key=${requestKey}&`),
+    baseUrl: apiRoot.concat(`/hs/hsprice/`),
   }),
   endpoints: (builder) => ({
     getBrands: builder.query({
-      query: (article) => `number=${article}`,
+      query: (article) => ({
+        url: "",
+        params: {
+          key: requestKey,
+          number: article,
+        },
+      }),
     }),
     getOptions: builder.query({
-      query: ({ article, brand }) =>
-        `number=${article}&brand=${brand}&analogues=on`,
+      query: ({ article, brand }) => ({
+        url: "",
+        params: {
+          key: requestKey,
+          number: article,
+          brand,
+          analogues: "on",
+        },
+      }),
     }),
   }),
 })

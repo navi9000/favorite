@@ -1,16 +1,16 @@
 import { Input, Button, Space } from "antd"
-import useSearch from "../../hooks/use-search"
+import { useArticleSearch } from "../../hooks/use-article-search"
 import { useRef } from "react"
 
 const Search = () => {
-  const { search, setSearch } = useSearch()
-  const inputRef = useRef(search)
+  const { article, setArticle } = useArticleSearch()
+  const inputRef = useRef(article)
 
   const onClick = () => {
     if (!inputRef.current) {
       return
     }
-    setSearch(inputRef.current.input.value)
+    setArticle(inputRef.current.input.value)
   }
 
   return (
@@ -19,7 +19,7 @@ const Search = () => {
         <Input
           placeholder="Введите артикул"
           ref={inputRef}
-          defaultValue={search}
+          defaultValue={article}
         />
         <Button onClick={onClick}>Поиск</Button>
       </Space.Compact>
