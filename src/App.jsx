@@ -2,12 +2,12 @@ import "./App.css"
 
 import { Provider } from "react-redux"
 import { store } from "@/store/store"
-import MainPage from "@/pages/main-page"
+import { Routes } from "@/routes/routes"
 
 function App() {
   return (
     <Provider store={store}>
-      <MainPage />
+      <Routes />
     </Provider>
   )
 }
