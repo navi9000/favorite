@@ -1,13 +1,14 @@
 import "./App.css"
-import BrandList from "./components/brand-list/brand-list"
-import Search from "./components/search/search"
+
+import { Provider } from "react-redux"
+import { store } from "@/store/store"
+import MainPage from "@/pages/main-page"
 
 function App() {
   return (
-    <div>
-      <Search />
-      <BrandList />
-    </div>
+    <Provider store={store}>
+      <MainPage />
+    </Provider>
   )
 }
 
