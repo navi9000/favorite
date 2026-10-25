@@ -31,6 +31,9 @@ jobs:
         run: npm ci
 
       - name: Build
+        env:
+          VITE_API_ROOT: ${{ vars.VITE_API_ROOT }}
+          VITE_KEY_FOR_GET_ITEMS: ${{ vars.VITE_KEY_FOR_GET_ITEMS }}
         run: npm run build:github-pages
 
       - name: Upload Pages artifact
