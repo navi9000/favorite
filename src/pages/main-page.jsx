@@ -16,9 +16,7 @@ const MainPage = () => {
           <Typography.Text type="secondary">
             Каталог автозапчастей
           </Typography.Text>
-          <Typography.Title level={1}>
-            Поиск аналогов
-          </Typography.Title>
+          <Typography.Title level={1}>Поиск аналогов</Typography.Title>
           <Typography.Paragraph type="secondary">
             Найдите подходящие детали по артикулу и сравните предложения
             производителей.
@@ -26,9 +24,7 @@ const MainPage = () => {
         </header>
 
         <div className={styles.sections}>
-          <Card>
-            <Search />
-          </Card>
+          <Search />
 
           {showBrandList ? (
             <BrandList />
@@ -36,9 +32,7 @@ const MainPage = () => {
             <Card>
               <Empty
                 image={Empty.PRESENTED_IMAGE_SIMPLE}
-                description={
-                  <Typography.Text>Бренд не выбран</Typography.Text>
-                }
+                description={<Typography.Text>Бренд не выбран</Typography.Text>}
               />
             </Card>
           )}

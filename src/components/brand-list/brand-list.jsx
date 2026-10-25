@@ -5,8 +5,20 @@ import { useGetBrandsQuery } from "@/features/goods"
 import styles from "./brand-list.module.css"
 
 const columns = [
-  { title: "Бренд", dataIndex: "brand", key: "brand", width: 180 },
-  { title: "Наименование", dataIndex: "name", key: "name", width: 360 },
+  {
+    title: "Бренд",
+    dataIndex: "brand",
+    key: "brand",
+    width: 100,
+    ellipsis: true,
+  },
+  {
+    title: "Наименование",
+    dataIndex: "name",
+    key: "name",
+    width: 200,
+    ellipsis: true,
+  },
 ]
 
 const BrandList = () => {
@@ -27,7 +39,7 @@ const BrandList = () => {
   }
 
   return (
-    <Card title="Найденные бренды">
+    <Card className={styles.card} title="Найденные бренды">
       <div className={styles.tableContainer}>
         <Table
           columns={columns}
@@ -37,7 +49,6 @@ const BrandList = () => {
           }}
           loading={isLoading || isFetching}
           tableLayout="fixed"
-          scroll={{ x: 600 }}
           pagination={{
             hideOnSinglePage: true,
             showSizeChanger: false,

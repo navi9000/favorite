@@ -12,6 +12,14 @@
 }
 
 @media (max-width: 600px) {
+  .card :global(.ant-card-body) {
+    padding: 12px;
+  }
+
+  .card :global(.ant-card-head) {
+    padding-inline: 12px;
+  }
+
   .tableContainer :global(.ant-table-cell) {
     white-space: nowrap;
   }

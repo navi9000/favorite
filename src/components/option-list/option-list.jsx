@@ -1,4 +1,4 @@
-import { Card, Descriptions, List, Typography } from "antd"
+import { Card, Descriptions, Empty, List, Typography } from "antd"
 import { useGetOptionsQuery } from "@/features/goods"
 import { useArticleSearch } from "@/hooks/use-article-search"
 import styles from "./option-list.module.css"
@@ -11,7 +11,18 @@ const OptionList = ({ brand }) => {
   })
 
   if (isError) {
-    return <Typography>Не удалось получить список рекомендаций</Typography>
+    return (
+      <Card>
+        <Empty
+          image={Empty.PRESENTED_IMAGE_SIMPLE}
+          description={
+            <Typography.Text>
+              Не удалось получить список рекомендаций
+            </Typography.Text>
+          }
+        />
+      </Card>
+    )
   }
 
   return (
