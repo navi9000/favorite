@@ -3,12 +3,12 @@
 }
 
 .cardListItem {
-  padding: 0;
-  border-block-end: 0;
+  display: contents;
 }
 
 .optionCard {
   width: 100%;
+  margin-block-end: 16px;
 }
 
 .optionName {
@@ -17,4 +17,30 @@
 
 .optionDetails {
   overflow-wrap: anywhere;
+}
+
+.pagination {
+  display: flex;
+  justify-content: flex-end;
+  margin-block-start: 16px;
+}
+
+@media (max-width: 600px) {
+  .optionDetails :global(.ant-descriptions-view),
+  .optionDetails :global(.ant-descriptions-view table),
+  .optionDetails :global(.ant-descriptions-view tbody),
+  .optionDetails :global(.ant-descriptions-row) {
+    display: block;
+    width: 100%;
+  }
+
+  .optionDetails :global(.ant-descriptions-row) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .optionDetails :global(.ant-descriptions-item) {
+    display: block;
+    width: 100%;
+  }
 }

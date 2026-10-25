@@ -25,7 +25,6 @@ const MainPage = () => {
 
         <div className={styles.sections}>
           <Search />
-
           {showBrandList ? (
             <BrandList />
           ) : (
