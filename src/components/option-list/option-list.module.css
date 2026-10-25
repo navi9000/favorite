@@ -1,0 +1,20 @@
+.cardList {
+  display: block;
+}
+
+.cardListItem {
+  padding: 0;
+  border-block-end: 0;
+}
+
+.optionCard {
+  width: 100%;
+}
+
+.optionName {
+  overflow-wrap: anywhere;
+}
+
+.optionDetails {
+  overflow-wrap: anywhere;
+}

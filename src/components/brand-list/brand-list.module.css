@@ -1,0 +1,18 @@
+.tableContainer {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.tableContainer :global(.ant-table-wrapper) {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  .tableContainer :global(.ant-table-cell) {
+    white-space: nowrap;
+  }
+}
