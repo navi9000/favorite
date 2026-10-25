@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
 import { apiRoot, requestKey } from "../config/global-variables"
+import { formatGoods } from "../utils/goods"
 
 export const goodsApi = createApi({
   reducerPath: "goodsApi",
@@ -15,6 +16,13 @@ export const goodsApi = createApi({
           number: article,
         },
       }),
+      transformResponse: (returnValue) => ({
+        goods: returnValue.goods.map(({ brand, name }) => ({
+          brand,
+          name,
+          key: brand,
+        })),
+      }),
     }),
     getOptions: builder.query({
       query: ({ article, brand }) => ({
@@ -26,6 +34,21 @@ export const goodsApi = createApi({
           analogues: "on",
         },
       }),
+      transformResponse: (returnValue) => {
+        const result = []
+        result.push(
+          ...returnValue.goods.flatMap((goodsOption) =>
+            formatGoods(goodsOption),
+          ),
+        )
+        result.push(
+          ...returnValue.goods.flatMap((goodsOption) =>
+            goodsOption.analogues.flatMap((analog) => formatGoods(analog)),
+          ),
+        )
+
+        return result
+      },
     }),
   }),
 })
