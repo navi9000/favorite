@@ -1,0 +1,19 @@
+.form {
+  display: flex;
+  width: 100%;
+}
+
+.control {
+  width: min(100%, 640px);
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  .control {
+    width: 100%;
+  }
+
+  .control input {
+    min-width: 0;
+  }
+}

@@ -1,0 +1,43 @@
+.page {
+  min-height: 100vh;
+  padding: 64px 24px;
+}
+
+.content {
+  width: min(100%, 1080px);
+  margin: 0 auto;
+}
+
+.header {
+  max-width: 680px;
+  margin: 0 auto 32px;
+  text-align: center;
+}
+
+.header h1 {
+  margin: 10px 0 8px;
+}
+
+.header p {
+  margin-bottom: 0;
+}
+
+.sections {
+  display: grid;
+  gap: 24px;
+}
+
+@media (max-width: 600px) {
+  .page {
+    padding: 36px 16px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+    text-align: left;
+  }
+
+  .sections {
+    gap: 16px;
+  }
+}
