@@ -1,6 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react"
-import { apiRoot, requestKey } from "../config/global-variables"
-import { formatGoods } from "../utils/goods"
+import { apiRoot, requestKey } from "@/config/global-variables"
+import { formatGoods } from "@/utils/goods"
 
 export const goodsApi = createApi({
   reducerPath: "goodsApi",
