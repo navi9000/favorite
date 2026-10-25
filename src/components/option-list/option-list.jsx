@@ -1,4 +1,5 @@
 import {
+  Button,
   Card,
   Descriptions,
   Empty,
@@ -19,7 +20,7 @@ const OptionList = ({ brand }) => {
     brand,
     page: 1,
   })
-  const { data, isLoading, isFetching, isError } = useGetOptionsQuery({
+  const { data, isLoading, isFetching, isError, refetch } = useGetOptionsQuery({
     article,
     brand,
   })
@@ -35,6 +36,7 @@ const OptionList = ({ brand }) => {
             </Typography.Text>
           }
         />
+        <Button onClick={refetch}>Попробовать снова</Button>
       </Card>
     )
   }

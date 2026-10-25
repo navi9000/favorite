@@ -42,9 +42,14 @@ export const goodsApi = createApi({
           ),
         )
         result.push(
-          ...returnValue.goods.flatMap((goodsOption) =>
-            goodsOption.analogues.flatMap((analog) => formatGoods(analog)),
-          ),
+          ...returnValue.goods.flatMap((goodsOption) => {
+            if (goodsOption.analogues) {
+              return goodsOption.analogues.flatMap((analog) =>
+                formatGoods(analog),
+              )
+            }
+            return []
+          }),
         )
 
         return result
