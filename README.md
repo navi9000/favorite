@@ -1,16 +1,11 @@
-# React + Vite
+# О проекте
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Страница со списком рекомендованных деталей. Процесс предполагает 2 шага. На первом шаге необходимо ввести номер артикула. На втором шаге необходимо выбрать одно из предложений в таблице и раскрыть выпадающее меню, нажав на плюс. В выдаче будет список запчастей: первоначально запрошенная и похожие на нее. Запчасти отображаются в списке, только если они есть на складе.
 
-Currently, two official plugins are available:
+Ссылка на описание API: https://lk.favorit-parts.ru/static/wsprice.pdf
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Особенности проекта
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- в проекте использован чистый javascript согласно требованиям
+- загрузка данных реализована через rtk query
+- компоненты взяты из библиотеки ant design
