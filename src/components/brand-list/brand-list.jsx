@@ -1,4 +1,4 @@
-import { Card, Empty, Table, Typography } from "antd"
+import { Button, Card, Empty, Table, Typography } from "antd"
 import OptionList from "../option-list/option-list"
 import { useArticleSearch } from "@/hooks/use-article-search"
 import { useGetBrandsQuery } from "@/features/goods"
@@ -23,7 +23,8 @@ const columns = [
 
 const BrandList = () => {
   const { article } = useArticleSearch()
-  const { data, isLoading, isFetching, isError } = useGetBrandsQuery(article)
+  const { data, isLoading, isFetching, isError, refetch } =
+    useGetBrandsQuery(article)
 
   if (isError) {
     return (
@@ -34,6 +35,7 @@ const BrandList = () => {
             <Typography.Text>Не удалось получить данные</Typography.Text>
           }
         />
+        <Button onClick={refetch}>Попробовать снова</Button>
       </Card>
     )
   }
